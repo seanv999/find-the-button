@@ -105,7 +105,7 @@ section2:NewToggle("Infinite Jump", "Jump Infinitly", function(state)
 end)
 
 
-section2:NewToggle("Box ESP", "Jump Infinitly", function(state)
+Section:NewToggle("Box ESP", "Jump Infinitly", function(state)
     if state then
         print("Toggle On")
 		Esp = true
@@ -117,7 +117,7 @@ section2:NewToggle("Box ESP", "Jump Infinitly", function(state)
 	
 end)
 
-section2:NewToggle("Tracers", "Jump Infinitly", function(state)
+Section:NewToggle("Tracers", "Jump Infinitly", function(state)
     if state then
         print("Toggle On")
 		tracers = true
