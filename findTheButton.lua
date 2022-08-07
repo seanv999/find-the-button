@@ -10,24 +10,30 @@ function esp(drop)
 
 	currentLevel = "Room".. game:GetService("Players").localPlayer.leaderstats.Room.value
 	button =  game:GetService("Workspace").Modes[currentMap][currentLevel]["Door/Button"].Button
-
+	boxEsp = Drawing.new("Square")
+	boxEsp.Color = Color3.fromRGB(255,255,0)
+	boxEsp.Visible = true
+	boxEsp.Size = Vector2.new(60,50)
 	BUTTON = Drawing.new("Text")
 	BUTTON.Visible = true
-	
 	BUTTON.Center = true
-	BUTTON.Outline = true
-	BUTTON.Font = 4
-	BUTTON.Color = Color3.fromRGB(255,255,0)
+	BUTTON.Outline = false
+	BUTTON.Font = 7
+	BUTTON.Color = Color3.fromRGB(0,0,0)
 	BUTTON.Size = 25
-	BUTTON.Text = "UGHHH"
+	BUTTON.Text = "Button"
+
+
 
 	renderstepped = runservice.RenderStepped:Connect(function()
 		
 		drop_pos = camera:WorldToViewportPoint(button.Position)
-		BUTTON.Position = Vector2.new(drop_pos.X, drop_pos.Y)
+		BUTTON.Position = Vector2.new(drop_pos.X+30, drop_pos.Y+10)
+		boxEsp.Position = Vector2.new(drop_pos.X, drop_pos.Y)
 	end)
 	wait(5)
 	BUTTON:Destroy()
+	boxEsp:Destroy()
 	canClick = true
 
 	
@@ -35,9 +41,10 @@ function esp(drop)
 end
 
 local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
-local Window = Library.CreateLib("Find The Button    Sean, Kevin", "BloodTheme")
+local Window = Library.CreateLib("Find The Button                     Seanv999 Deathskull93937", "BloodTheme")
 local Tab = Window:NewTab("Main")
 local Tab2 = Window:NewTab("Misc")
+local Tab3 = Window:NewTab("UGHHH U SUCK")
 local Section = Tab:NewSection("Cheats")
 
 Section:NewButton("Show Button", "Shows Button", function()
@@ -54,3 +61,5 @@ Section:NewButton("Teleport To Button", "Teleports Player To Button", function()
 	game.Players.LocalPlayer.Character:MoveTo(button.Position)
 	
 end)
+
+
