@@ -102,6 +102,13 @@ local Tab = Window:NewTab("Main")
 		
 	end)
 
+	Section:NewButton("Click Button", "Teleports Player To Button", function()
+		currentMap = game:GetService("Players").localPlayer.leaderstats.Mode.value .. "Mode"
+		currentLevel = "Room".. game:GetService("Players").localPlayer.leaderstats.Room.value
+		print(game:GetService("Workspace").Modes[currentMap][currentLevel]["Door/Button"].Button.ClickDetector)
+		fireclickdetector(game:GetService("Workspace").Modes[currentMap][currentLevel]["Door/Button"].Button.ClickDetector)
+	end)
+
 local Tab4 = Window:NewTab("ESP Settings")
 	local Section3 = Tab4:NewSection("Colors")
 
